@@ -1,0 +1,1 @@
+Diligence, Efficiency, Unwavering Discipline, Meticulous Reliability, Pragmatic Competence

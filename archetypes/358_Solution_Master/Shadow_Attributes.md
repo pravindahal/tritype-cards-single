@@ -1,0 +1,1 @@
+Emotional Detachment, Intimidating Arrogance, Ruthless Manipulation, Dismissive of Vulnerability, Calculating Self-Interest

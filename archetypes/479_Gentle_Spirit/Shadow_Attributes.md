@@ -1,0 +1,1 @@
+Avoidant Escapism, Emotional Denial, Chronic Procrastination, Conflict Avoidance, Disconnection from Reality

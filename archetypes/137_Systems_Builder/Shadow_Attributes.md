@@ -1,0 +1,1 @@
+Perfectionistic Rigidity, Impatient Frustration, Superficial Image-Focus, Neglect of Inner Needs, Overly Competitive Drive

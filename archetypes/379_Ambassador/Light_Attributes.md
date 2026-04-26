@@ -1,0 +1,1 @@
+Diplomatic Mediation, Adaptable Charm, Resilient Optimism, Approachable Leadership

@@ -1,0 +1,1 @@
+Deep Intuition, Imaginative Depth, Observant Wisdom, Serene Presence, Intellectual Curiosity

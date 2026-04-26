@@ -1,0 +1,1 @@
+Fierce Protection, Decisive Leadership, Empathetic Advocacy, Unwavering Loyalty, Crisis Management

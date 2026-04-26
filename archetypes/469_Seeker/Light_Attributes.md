@@ -1,0 +1,1 @@
+Empathetic Insight, Diligent Inquiry, Harmonious Acceptance, Deep Authenticity, Loyal Observance

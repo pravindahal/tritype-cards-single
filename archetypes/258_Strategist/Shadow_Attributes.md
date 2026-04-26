@@ -1,0 +1,1 @@
+Manipulative Control, Emotional Guarding, Volatile Intensity, Intrusive Dominance, Unpredictable Withdrawal

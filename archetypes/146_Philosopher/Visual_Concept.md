@@ -1,0 +1,13 @@
+Imagine a contemporary digital painting of a woman whose presence is both poised and intensely searching. Her eyes are sharp and discerning, reflecting a mind that is constantly analyzing and seeking the underlying truth.
+
+Attire & Details: Her attire is a study in meticulous balance. She wears a highly structured, impeccably tailored dark blazer (1's precision and adherence to standards) layered over a uniquely patterned, textured scarf in deep, soulful tones (4's expressive individuality). She holds a small, leather-bound notebook and an elegant, functional pen (6's need for preparedness and information), suggesting her role as a meticulous observer or teacher.
+
+Environment: She is situated in a modern, scholarly sanctuary—perhaps a private library or a quiet, contemporary study—where organized stacks of books and detailed, hand-drawn diagrams (6's quest for guidelines and truth) meet artistic, expressive decor. Large windows allow a sharp, clear light to illuminate her workspace (1's clarity and rectitude), while the edges of the room dissolve into deep, atmospheric shadows and soft, melancholic textures (4's emotional depth).
+
+Symbolism & Composition: The composition is focused and intimate, capturing her state of intense concentration and intellectual curiosity. The lighting creates a striking interplay between bright, analytical highlights and moody, emotive shadows. The overall feeling is one of a "philosopher" caught in a moment of profound realization.
+
+Color Palette: The palette is anchored in scholarly navy, charcoal, and deep forest green (1 and 6's groundedness and seriousness), punctuated by poignant, soulful accents of amethyst, burnt orange, and deep crimson (4's emotional intensity and creativity).
+
+Style: A low-poly vector illustration style, with a few distinct characteristics as follows. Everything is built from flat polygons (triangles and simple shapes). Details are reduced to their most basic forms. Colors are applied in solid blocks. Depth comes from slightly different shades on adjacent faces rather than smooth lighting.
+Muted greens, blues, and warm yellows create a calm, friendly tone rather than realism.
+Characters have exaggerated or simplified anatomy (blocky limbs, angular faces), giving a playful, almost toy-like feel. Edges are crisp and precise, typical of digital vector art rather than hand-drawn textures. Instead of fine detail, information is conveyed through shape and color contrast. It sits somewhere between modern infographic art, mobile game aesthetics, and low-poly 3D rendered in 2D—designed to feel approachable, readable, and visually tidy rather than realistic.

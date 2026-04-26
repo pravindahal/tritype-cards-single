@@ -1,0 +1,13 @@
+Imagine a contemporary digital painting of a charismatic woman standing poised with a genuinely warm and engaging smile. Her focused, kind eyes convey both capability and approachability.
+
+Attire & Details: Her clothing is a sophisticated mix. A well-tailored, modern blazer or jacket (3's success) is layered over comfortable, textured fabrics in uplifting colors (7's energy/9's ease) – perhaps a vibrant scarf or interesting jewelry. She wears unique, understated accessories that hint at global travels or personal creativity. Her posture is relaxed but composed, radiating a powerful, accessible confidence.
+
+Environment: She stands in an open, bright space that suggests modern connection and global harmony. This might be a bustling but positive modern atrium overlooking a city at dawn (optimism) or a serene plaza where graceful architectural lines blend with lush greenery (nature/calm). Background elements, slightly blurred, include stylized connecting lines or subtle glows, with diverse figures engaged in conversation further down the path, rather than explicitly identifiable.
+
+Symbolism & Composition: In one hand, she lightly holds a beautifully crafted, artistic compass or a unique globe sculpture (future direction/connection) – held not aggressively, but with gentle strength. The composition uses soft, flowing lines and circular shapes rather than harsh angles to convey a sense of balance and unity. Diffused, warm natural light bathes the entire scene, with soft morning gold or gentle sunset hues.
+
+Color Palette: A balanced and uplifting palette of deep grounded blues and warm grays (professionalism/calm) punctuated by vibrant splashes of turquoise, coral, gold, and soft greens (optimism/nature). The light is essential, creating a sense of warmth and genuine connection.
+
+Style: A low-poly vector illustration style, with a few distinct characteristics as follows. Everything is built from flat polygons (triangles and simple shapes). Details are reduced to their most basic forms. Colors are applied in solid blocks. Depth comes from slightly different shades on adjacent faces rather than smooth lighting.
+Muted greens, blues, and warm yellows create a calm, friendly tone rather than realism.
+Characters have exaggerated or simplified anatomy (blocky limbs, angular faces), giving a playful, almost toy-like feel. Edges are crisp and precise, typical of digital vector art rather than hand-drawn textures. Instead of fine detail, information is conveyed through shape and color contrast. It sits somewhere between modern infographic art, mobile game aesthetics, and low-poly 3D rendered in 2D—designed to feel approachable, readable, and visually tidy rather than realistic.

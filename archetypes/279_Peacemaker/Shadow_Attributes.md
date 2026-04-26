@@ -1,0 +1,1 @@
+Chronic Conflict Avoidance, Repression of Negativity, Self-Neglecting Compliance, Denial of Hardship, Overly Permissive Boundaries

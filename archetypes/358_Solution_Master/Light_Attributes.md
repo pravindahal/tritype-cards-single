@@ -1,0 +1,1 @@
+Strategic Mastery, Resourceful Problem-Solving, Tenacious Ambition, Decisive Leadership, Analytical Precision

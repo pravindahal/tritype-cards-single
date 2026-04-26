@@ -1,0 +1,13 @@
+Imagine a contemporary digital painting of a visionary woman whose expression captures a profound, soulful intensity (4) paired with a sharp, discerning focus (1). She possesses an aura of boundless curiosity and intellectual energy (7).
+
+Attire & Details: Her clothing is a masterpiece of structured creativity. She wears a tailored, high-collar architectural bodice with impeccable, clean lines (1) in a rich, deep navy, layered with translucent, flowing fabrics that feature swirling, emotive patterns (4). A striking, brightly colored piece of avant-garde jewelry—perhaps a gold earring shaped like a sunburst—adds a spark of spontaneous, adventurous spirit (7).
+
+Environment: She is situated in a space where structure meets the infinite. This might be a high-tech, geometric observatory (1) that overlooks a surreal, dreamlike landscape where the boundaries between the physical world and a cosmic, nebulous sky are blurred (7/4). The setting feels both meticulously organized and infinitely expansive.
+
+Symbolism & Composition: She is captured in a moment of profound creation, perhaps adjusting a complex, glowing holographic blueprint that represents her idealized vision (1/7). The composition uses strong, decisive lines to frame her (1), but these are softened by swirling, ethereal light particles and drifting petals that suggest the magic and movement of her imagination (4/7).
+
+Color Palette: A dramatic and sophisticated palette. Deep, moody tones of indigo, violet, and charcoal (4) provide a foundation of depth and mystery, which are pierced by brilliant, sharp highlights of gold, white, and vibrant turquoise (7/1), creating a visual metaphor for finding the ray of light within the complexity of the unknown.
+
+Style: A low-poly vector illustration style, with a few distinct characteristics as follows. Everything is built from flat polygons (triangles and simple shapes). Details are reduced to their most basic forms. Colors are applied in solid blocks. Depth comes from slightly different shades on adjacent faces rather than smooth lighting.
+Muted greens, blues, and warm yellows create a calm, friendly tone rather than realism.
+Characters have exaggerated or simplified anatomy (blocky limbs, angular faces), giving a playful, almost toy-like feel. Edges are crisp and precise, typical of digital vector art rather than hand-drawn textures. Instead of fine detail, information is conveyed through shape and color contrast. It sits somewhere between modern infographic art, mobile game aesthetics, and low-poly 3D rendered in 2D—designed to feel approachable, readable, and visually tidy rather than realistic.

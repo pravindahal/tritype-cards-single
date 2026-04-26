@@ -1,0 +1,1 @@
+Strategic Insight, Protective Leadership, Empathetic Expertise, Decisive Support, Resourceful Guidance

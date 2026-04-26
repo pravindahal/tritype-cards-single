@@ -1,0 +1,1 @@
+Hyper-Critical Judgment, Perfectionistic Rigidity, Chronic Anxiety, Reactive Moodiness, Suspicious Hyper-vigilance

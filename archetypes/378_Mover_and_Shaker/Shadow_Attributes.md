@@ -1,0 +1,1 @@
+Ruthless Ambition, Emotional Neglect, Provocative Impatience, Egocentric Drive, Overpowering Intensity

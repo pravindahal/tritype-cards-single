@@ -1,0 +1,1 @@
+Innovative Mentorship, Charismatic Instruction, Empathetic Leadership, Purposeful Optimism, Structured Creativity

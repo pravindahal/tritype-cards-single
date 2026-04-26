@@ -1,0 +1,13 @@
+Imagine a contemporary digital painting of a woman captured in a moment of profound, quiet introspection. Her expression is serene yet layered with a mysterious depth, as if she is witnessing a complex internal landscape (4's mystery/depth).
+
+Attire & Details: She wears soft, unstructured layers of textured fabric—perhaps a heavy, oversized knit sweater in muted, earthy tones (9's comfort/ease) paired with a unique, vintage piece of jewelry that hints at a personal history of discovery (4's individuality). Her posture is still and relaxed, but her eyes are sharp and observant, reflecting an intense, analytical focus (5's observing mind).
+
+Environment: She is nestled within a private, tranquil sanctuary—a sunlit corner of a room filled with tall bookshelves and trailing ivy (9's peace/nature). The space feels like an "inner sanctum," where the boundary between reality and imagination is slightly blurred by a soft, ethereal mist or a gentle, dreamlike glow (4's fantasy/dreamy nature). Elements of study, such as a scattered collection of botanical sketches or an open, complex tome, are visible nearby (5's quest for knowledge).
+
+Symbolism & Composition: The composition uses soft, receding edges and a sense of vast, quiet space to convey her withdrawn nature. There is no harsh light or sudden movement; instead, the scene is characterized by a pervasive, tranquil stillness. She appears as a silent, detached observer of her own vast, inner universe.
+
+Color Palette: A sophisticated, muted palette of deep forest greens, twilight blues, and soft ambers (5's depth/9's calm) punctuated by subtle, pearlescent highlights that suggest a touch of the ethereal and the unseen (4's magic/mystery). The light is diffused, creating a sense of soft, layered reality.
+
+Style: A low-poly vector illustration style, with a few distinct characteristics as follows. Everything is built from flat polygons (triangles and simple shapes). Details are reduced to their most basic forms. Colors are applied in solid blocks. Depth comes from slightly different shades on adjacent faces rather than smooth lighting.
+Muted greens, blues, and warm yellows create a calm, friendly tone rather than realism.
+Characters have exaggerated or simplified anatomy (blocky limbs, angular faces), giving a playful, almost toy-like feel. Edges are crisp and precise, typical of digital vector art rather than hand-drawn textures. Instead of fine detail, information is conveyed through shape and color contrast. It sits somewhere between modern infographic art, mobile game aesthetics, and low-poly 3D rendered in 2D—designed to feel approachable, readable, and visually tidy rather than realistic.

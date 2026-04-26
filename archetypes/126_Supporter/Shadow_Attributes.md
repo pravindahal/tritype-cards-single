@@ -1,0 +1,1 @@
+Hyper-vigilant Anxiety, Controlling Rigidity, Self-Neglecting Martyrdom, Critical Perfectionism, Demanding Expectations

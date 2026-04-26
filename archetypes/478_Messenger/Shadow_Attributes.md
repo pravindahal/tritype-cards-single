@@ -1,0 +1,1 @@
+Uncompromisingly Stubborn, Self-Absorbed, Reactive Confrontation, Uncooperative Non-conformity, Intensely Opinionated

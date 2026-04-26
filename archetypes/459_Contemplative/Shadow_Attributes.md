@@ -1,0 +1,1 @@
+Social Withdrawal, Avoidant Procrastination, Emotional Detachment, Self-Conscious Inhibition, Passive-Aggressive Resistance

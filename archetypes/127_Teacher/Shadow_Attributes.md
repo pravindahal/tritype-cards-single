@@ -1,0 +1,1 @@
+Toxic Positivity, Emotional Avoidance, Rigid Perfectionism, Chaotic Impulsivity, Dismissive Optimism

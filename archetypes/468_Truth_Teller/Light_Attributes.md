@@ -1,0 +1,1 @@
+Unwavering Authenticity, Fierce Protectiveness, Intuitive Discernment, Courageous Justice, Uninhibited Expression

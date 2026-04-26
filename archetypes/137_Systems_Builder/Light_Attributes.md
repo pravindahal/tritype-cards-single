@@ -1,0 +1,1 @@
+Visionary Innovation, Disciplined Achievement, Charismatic Efficiency, Resourceful Ingenuity, Principled Progress

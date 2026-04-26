@@ -1,0 +1,1 @@
+Perfectionistic Rigidity, Workaholic Tendencies, Hyper-Vigilance, Controlling Nature, Emotional Detachment

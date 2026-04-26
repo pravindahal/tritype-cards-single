@@ -1,0 +1,1 @@
+Charismatic Leadership, Empowering Generosity, Adventurous Optimism, Innovative Spirit, Magnetic Warmth

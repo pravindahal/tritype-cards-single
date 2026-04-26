@@ -1,0 +1,1 @@
+Perfectionistic Rigidity, Chronic Disenchantment, Erratic Moodiness, Unrealistic Expectations, Self-Critical Judgment

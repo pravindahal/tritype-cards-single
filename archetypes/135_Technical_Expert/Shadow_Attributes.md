@@ -1,0 +1,1 @@
+Emotional Detachment, Intellectual Arrogance, Rigid Perfectionism, Social Aloofness, Critical Obstructionism

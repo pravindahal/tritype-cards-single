@@ -1,0 +1,1 @@
+Intellectual Depth, Diplomatic Tact, Efficient Achievement, Adaptable Observance, Composed Wisdom

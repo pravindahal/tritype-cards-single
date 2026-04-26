@@ -1,0 +1,1 @@
+Emotional Detachment, Self-Obscurity, Analytical Aloofness, Avoidant Inertia, Robotic Disconnection

@@ -1,0 +1,1 @@
+Dynamic Achievement, Visionary Innovation, Charismatic Leadership, Decisive Execution, Resourceful Tenacity

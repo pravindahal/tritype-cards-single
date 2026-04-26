@@ -1,0 +1,1 @@
+Hyper-Reactivity, Combative Bluntness, Excessive Suspicion, Emotional Volatility, Defensive Aggression

@@ -1,0 +1,1 @@
+Wise, Altruistic, Knowledgeable, Ethical, Diligent

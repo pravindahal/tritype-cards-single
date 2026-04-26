@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Archetype Cards — Tritype Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Cinzel', 'serif'],
+            body: ['Crimson Text', 'serif'],
+          },
+          colors: {
+            midnight: {
+              50: '#e8edf5',
+              100: '#c5cfe3',
+              200: '#94a7cc',
+              300: '#6a83b5',
+              400: '#3d5a8a',
+              500: '#1e3a6e',
+              600: '#162c54',
+              700: '#0f1f3d',
+              800: '#0a1528',
+              900: '#060d1a',
+            },
+            silver: '#c0cfe0',
+            ice: '#e0eaff',
+            frost: '#a8bfdb',
+            sapphire: '#2563eb',
+            crimson: '#c94040',
+            steel: '#7b93af',
+            gold: '#c9973c',
+          },
+          boxShadow: {
+            card: '0 8px 40px 0 rgba(6,13,26,0.75)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .art-frame {
+      clip-path: polygon(12% 0%, 88% 0%,
+          100% 12%, 100% 88%,
+          88% 100%, 12% 100%,
+          0% 88%, 0% 12%);
+    }
+
+    .dark-texture {
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"),
+        linear-gradient(160deg, #0f1f3d 0%, #0a1528 50%, #060d1a 100%);
+    }
+
+    .silver-rule {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #7b93af 20%, #7b93af 80%, transparent);
+    }
+
+    .label-caps {
+      letter-spacing: 0.18em;
+    }
+
+    .trait-pill {
+      display: none;
+    }
+
+    /* Card content transitions */
+    .card-fade {
+      transition: opacity 0.35s ease;
+    }
+
+    .card-fade.loading {
+      opacity: 0.3;
+    }
+
+    /* Loading spinner */
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spinner {
+      animation: spin 1s linear infinite;
+      border: 2px solid rgba(37, 99, 235, 0.2);
+      border-top-color: #2563eb;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Error state */
+    .error-msg {
+      color: #c94040;
+      font-style: italic;
+    }
+
+    .nav-btn {
+      color: #7b93af;
+      transition: all 0.2s ease;
+      background: transparent;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .nav-btn:hover {
+      color: #e0eaff;
+      background: rgba(37, 99, 235, 0.1);
+      transform: scale(1.1);
+    }
+
+    .nav-btn:active {
+      transform: scale(0.9);
+    }
+
+    /* Modal Styling */
+    #archetype-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(6, 13, 26, 0.85);
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    #archetype-modal.open {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .modal-content {
+      width: 90%;
+      max-width: 400px;
+      max-height: 80vh;
+      border: 1px solid #3d5a8a;
+      border-radius: 1rem;
+      background: #0a1528;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      padding: 1.25rem;
+      border-bottom: 1px solid rgba(123, 147, 175, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-list {
+      overflow-y: auto;
+      flex: 1;
+      padding: 0.5rem;
+    }
+
+    .modal-list::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .modal-list::-webkit-scrollbar-thumb {
+      background: #3d5a8a;
+      border-radius: 2px;
+    }
+
+    .archetype-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 0.25rem;
+      color: #c0cfe0;
+      /* silver */
+    }
+
+    .archetype-item:hover {
+      background: rgba(37, 99, 235, 0.2);
+      color: #ffffff;
+    }
+
+    .archetype-item.active {
+      background: rgba(37, 99, 235, 0.25);
+      border-left: 3px solid #2563eb;
+      color: #e0eaff;
+      /* ice */
+    }
+
+    .archetype-item .item-idx {
+      font-family: inherit;
+      font-size: 0.75rem;
+      color: #a8bfdb;
+      /* frost */
+      width: 1.5rem;
+      font-weight: 600;
+    }
+
+    .archetype-item .item-name {
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      flex: 1;
+      color: #e0eaff;
+      /* ice */
+    }
+
+    .archetype-item .item-code {
+      font-size: 0.7rem;
+      color: #7b93af;
+      /* steel */
+      font-style: italic;
+      letter-spacing: 0.05em;
+    }
+
+    #archetype-name {
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    #archetype-name:hover {
+      color: #2563eb;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-midnight-900 p-4">
+
+  <article id="archetype-card"
+    class="relative w-full max-w-sm mx-auto rounded-2xl overflow-hidden shadow-card dark-texture font-body text-silver">
+
+    <!-- Outer ornamental border ring -->
+    <div class="absolute inset-0 rounded-2xl pointer-events-none"
+      style="box-shadow: inset 0 0 0 3px #3d5a8a, inset 0 0 0 6px rgba(37,99,235,0.15), inset 0 0 0 9px rgba(61,90,138,0.2);">
+    </div>
+
+    <!-- ═══════════════ HEADER ═══════════════ -->
+    <header class="relative pt-6 pb-3 px-6 text-center">
+      <div class="flex items-center justify-between mb-1">
+        <button onclick="prevArchetype()" class="nav-btn" title="Previous Archetype">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <h1 id="archetype-name" onclick="openModal()"
+          class="font-heading text-[1.35rem] font-bold tracking-wide uppercase text-ice drop-shadow-sm card-fade flex-1 px-1 whitespace-nowrap tracking-tight">
+          The Architect
+        </h1>
+        <button onclick="nextArchetype()" class="nav-btn" title="Next Archetype">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      <p id="archetype-code" class="mt-1 text-xs font-body italic text-frost/70 label-caps card-fade">TRITYPE</p>
+      <div class="silver-rule mt-3"></div>
+    </header>
+
+    <!-- ═══════════════ LIGHT ATTRIBUTES ═══════════════ -->
+    <section class="px-4 pt-2 pb-2">
+      <div class="rounded-lg overflow-hidden border border-sapphire/25">
+        <div class="flex items-center gap-2 px-3 py-1.5"
+          style="background: linear-gradient(90deg, rgba(37,99,235,0.14), rgba(37,99,235,0.04));">
+          <svg class="w-3 h-3 text-sapphire flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              clip-rule="evenodd" />
+          </svg>
+          <span class="text-sapphire font-heading text-xs font-semibold label-caps">Light</span>
+        </div>
+        <div class="px-3 py-2 bg-midnight-700/60">
+          <p id="light-text" class="text-sm leading-snug text-silver/90 font-body card-fade">
+            Loading…
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ART ═══════════════ -->
+    <section class="px-5 py-2">
+      <div class="relative rounded-sm overflow-hidden"
+        style="padding: 3px; background: linear-gradient(135deg, #3d5a8a, #1e3a6e, #3d5a8a, #1e3a6e);">
+        <div class="art-frame overflow-hidden bg-midnight-800 flex items-center justify-center"
+          style="aspect-ratio: 1 / 1.05;">
+          <img id="card-art" src="" alt="" class="w-full h-full object-cover object-top card-fade" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SHADOW ATTRIBUTES ═══════════════ -->
+    <section class="px-4 pt-2 pb-2">
+      <div class="rounded-lg overflow-hidden border border-crimson/25">
+        <div class="flex items-center gap-2 px-3 py-1.5"
+          style="background: linear-gradient(90deg, rgba(201,64,64,0.14), rgba(201,64,64,0.04));">
+          <svg class="w-3 h-3 text-crimson flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+          </svg>
+          <span class="text-crimson font-heading text-xs font-semibold label-caps">Shadow</span>
+        </div>
+        <div class="px-3 py-2 bg-midnight-700/60">
+          <p id="shadow-text" class="text-sm leading-snug text-silver/90 font-body card-fade">
+            Loading…
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="px-4 pt-1 pb-5">
+      <div class="silver-rule mb-3"></div>
+      <div class="text-center mt-2">
+        <span class="text-[9px] text-frost/50 label-caps">ENNEAGRAM TRITYPE EXPLORER</span>
+      </div>
+    </footer>
+  </article>
+
+  <!-- ═══════════════ MODAL SELECTOR ═══════════════ -->
+  <div id="archetype-modal" onclick="if(event.target === this) closeModal()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="font-heading text-lg font-bold tracking-widest uppercase text-ice">Select Archetype</h2>
+        <button onclick="closeModal()" class="text-frost hover:text-ice p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div id="archetype-list" class="modal-list">
+        <!-- populated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const ARCHETYPES = {
+      '125': { name: 'Mentor', folder: '125_Mentor', img: '125_Mentor.png' },
+      '126': { name: 'Supporter', folder: '126_Supporter', img: '126_Supporter.png' },
+      '127': { name: 'Teacher', folder: '127_Teacher', img: '127_Teacher.png' },
+      '135': { name: 'Technical Expert', folder: '135_Technical_Expert', img: '135_Technical_Expert.png' },
+      '136': { name: 'Taskmaster', folder: '136_Taskmaster', img: '136_Taskmaster.png' },
+      '137': { name: 'Systems Builder', folder: '137_Systems_Builder', img: '137_Systems_Builder.png' },
+      '145': { name: 'Researcher', folder: '145_Researcher', img: '145_Researcher.png' },
+      '146': { name: 'Philosopher', folder: '146_Philosopher', img: '146_Philosopher.png' },
+      '147': { name: 'Visionary', folder: '147_Visionary', img: '147_Visionary.png' },
+      '258': { name: 'Strategist', folder: '258_Strategist', img: '258_Strategist.png' },
+      '259': { name: 'Problem Solver', folder: '259_Problem_Solver', img: '259_Problem_Solver.png' },
+      '268': { name: 'Rescuer', folder: '268_Rescuer', img: '268_Rescuer.png' },
+      '269': { name: 'Good Samaritan', folder: '269_Good_Samaritan', img: '269_Good_Samiritan.png' },
+      '278': { name: 'Free Spirit', folder: '278_Free_Spirit', img: '278_Free_Spirit.png' },
+      '279': { name: 'Peacemaker', folder: '279_Peacemaker', img: '279_Peacemaker.png' },
+      '358': { name: 'Solution Master', folder: '358_Solution_Master', img: '358_Solution_Master.png' },
+      '359': { name: 'Thinker', folder: '359_Thinker', img: '359_Thinker.png' },
+      '368': { name: 'Justice Fighter', folder: '368_Justice_Fighter', img: '368_Justice_Fighter.png' },
+      '369': { name: 'Mediator', folder: '369_Mediator', img: '369_Mediator.png' },
+      '378': { name: 'Mover and Shaker', folder: '378_Mover_and_Shaker', img: '378_Mover_and_Shaker.png' },
+      '379': { name: 'Ambassador', folder: '379_Ambassador', img: '379_Ambassador.png' },
+      '458': { name: 'Scholar', folder: '458_Scholar', img: '458_Scholar.png' },
+      '459': { name: 'Contemplative', folder: '459_Contemplative', img: '459_Contemplative.png' },
+      '468': { name: 'Truth Teller', folder: '468_Truth_Teller', img: '468_Truth_Teller.png' },
+      '469': { name: 'Seeker', folder: '469_Seeker', img: '469_Seeker.png' },
+      '478': { name: 'Messenger', folder: '478_Messenger', img: '478_Messenger.png' },
+      '479': { name: 'Gentle Spirit', folder: '479_Gentle_Spirit', img: '479_Gentle_Spirit.png' },
+    };
+
+    const elName = document.getElementById('archetype-name');
+    const elCode = document.getElementById('archetype-code');
+    const elLight = document.getElementById('light-text');
+    const elShadow = document.getElementById('shadow-text');
+    const elArt = document.getElementById('card-art');
+    const fadeEls = document.querySelectorAll('.card-fade');
+
+    const CODES_BY_INDEX = Object.keys(ARCHETYPES).sort();
+
+    let currentCode = '125';
+
+    function getCurrentCode() {
+      return currentCode;
+    }
+
+    function nextArchetype() {
+      const currentIndex = CODES_BY_INDEX.indexOf(currentCode);
+      const nextIndex = (currentIndex + 1) % CODES_BY_INDEX.length;
+      loadArchetype(CODES_BY_INDEX[nextIndex]);
+    }
+
+    function prevArchetype() {
+      const currentIndex = CODES_BY_INDEX.indexOf(currentCode);
+      const prevIndex = (currentIndex - 1 + CODES_BY_INDEX.length) % CODES_BY_INDEX.length;
+      loadArchetype(CODES_BY_INDEX[prevIndex]);
+    }
+
+    const elModal = document.getElementById('archetype-modal');
+    const elModalList = document.getElementById('archetype-list');
+
+    function openModal() {
+      elModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      updateModalActiveState();
+    }
+
+    function closeModal() {
+      elModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function initModalList() {
+      elModalList.innerHTML = '';
+      const fragment = document.createDocumentFragment();
+
+      const randomDiv = document.createElement('div');
+      randomDiv.className = 'archetype-item group italic';
+      randomDiv.style.borderBottom = '1px solid rgba(123, 147, 175, 0.1)';
+      randomDiv.innerHTML = `
+        <span class="item-idx">🎲</span>
+        <span class="item-name text-gold/90">Surprise Me (Random)</span>
+        <span class="item-code">? ? ?</span>
+      `;
+      randomDiv.onclick = () => {
+        const randomCode = CODES_BY_INDEX[Math.floor(Math.random() * CODES_BY_INDEX.length)];
+        loadArchetype(randomCode);
+        closeModal();
+      };
+      fragment.appendChild(randomDiv);
+
+      CODES_BY_INDEX.forEach(code => {
+        const entry = ARCHETYPES[code];
+        const div = document.createElement('div');
+        div.className = 'archetype-item';
+        div.dataset.code = code;
+        div.innerHTML = `
+          <span class="item-idx">#</span>
+          <span class="item-name">${entry.name}</span>
+          <span class="item-code">${code}</span>
+        `;
+        div.onclick = () => {
+          loadArchetype(code);
+          closeModal();
+        };
+        fragment.appendChild(div);
+      });
+      elModalList.appendChild(fragment);
+    }
+
+    function updateModalActiveState() {
+      const items = elModalList.querySelectorAll('.archetype-item');
+      items.forEach(item => {
+        item.classList.toggle('active', item.dataset.code === currentCode);
+      });
+    }
+
+    async function loadArchetype(code) {
+      const entry = ARCHETYPES[code];
+      if (!entry) {
+        return;
+      }
+      
+      currentCode = code;
+
+      fadeEls.forEach(el => el.classList.add('loading'));
+
+      elName.textContent = entry.name;
+      elCode.textContent = "TRITYPE " + code;
+      document.title = `${entry.name} — ${code}`;
+
+      history.replaceState(null, '', `#${code}`);
+
+      elArt.src = `card_art/${entry.img}`;
+      elArt.alt = entry.name;
+
+      try {
+        const [lightResp, shadowResp] = await Promise.all([
+          fetch(`archetypes/${entry.folder}/Light_Attributes.md`),
+          fetch(`archetypes/${entry.folder}/Shadow_Attributes.md`)
+        ]);
+        
+        if (lightResp.ok) {
+          elLight.textContent = await lightResp.text();
+        } else {
+          elLight.textContent = 'No light attributes found.';
+        }
+        
+        if (shadowResp.ok) {
+          elShadow.textContent = await shadowResp.text();
+        } else {
+          elShadow.textContent = 'No shadow attributes found.';
+        }
+      } catch (err) {
+        elLight.textContent = 'Could not load attributes.';
+        elShadow.textContent = 'Could not load attributes.';
+      }
+
+      fadeEls.forEach(el => el.classList.remove('loading'));
+    }
+
+    (function init() {
+      initModalList();
+      let code = location.hash.slice(1);
+      if (!ARCHETYPES[code]) code = '125';
+      loadArchetype(code);
+    })();
+  </script>
+
+</body>
+
+</html>

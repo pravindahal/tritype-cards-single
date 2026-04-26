@@ -1,0 +1,1 @@
+Gentle Problem-Solving, Knowledgeable Empathy, Unassuming Wisdom, Peaceful Insight, Observational Compassion

@@ -1,0 +1,1 @@
+Avoidant Hedonism, Manipulative Charm, Defiant Nonconformity, Emotional Avoidance, Excessive Self-Indulgence

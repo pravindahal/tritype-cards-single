@@ -1,0 +1,1 @@
+Passive Withdrawal, Self-Neglecting, Avoidant Inaction, Vulnerability to Exploitation, Fear of Assertion

@@ -1,0 +1,1 @@
+Intellectual Arrogance, Cynical Withdrawal, Emotional Volatility, Blunt Rudeness, Hyper-Introspective Isolation

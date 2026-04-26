@@ -1,0 +1,1 @@
+Radiant Optimism, Compassionate Warmth, Harmonious Creativity, Infectious Enthusiasm, Gentle Adaptability

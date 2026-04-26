@@ -1,0 +1,1 @@
+Discerning Wisdom, Ethical Integrity, Creative Intuition, Conscientious Diligence, Empathetic Insight

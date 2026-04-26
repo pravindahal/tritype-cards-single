@@ -1,0 +1,1 @@
+Chronic Self-Doubt, Analysis Paralysis, Avoidant Withdrawal, Reactive Anxiety, Indecisive Hesitation

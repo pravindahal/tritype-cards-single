@@ -1,0 +1,1 @@
+Compassionate Service, Gentle Mediation, Attentive Nurturing, Harmonious Support, Steadfast Loyalty

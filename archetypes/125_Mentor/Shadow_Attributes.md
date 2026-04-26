@@ -1,0 +1,1 @@
+Overly Critical, Controlling, Withdrawn, Perfectionistic, Overwhelmed

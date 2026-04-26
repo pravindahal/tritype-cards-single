@@ -1,0 +1,1 @@
+Reactive Confrontation, Overbearing Authority, Impulsive Aggression, Dismissive of Emotion, Destructive Tenacity

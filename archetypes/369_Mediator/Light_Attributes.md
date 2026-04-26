@@ -1,0 +1,1 @@
+Adaptable Versatility, Harmonious Mediation, Professional Diligence, Engaged Charisma, Social Attunement

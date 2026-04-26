@@ -1,0 +1,1 @@
+Innovative Creativity, Intuitive Insight, Diligent Excellence, Visionary Optimism, Aesthetic Originality

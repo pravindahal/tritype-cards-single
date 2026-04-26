@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+.uv/
+.venv/
+old_comparisons/
+comparisons/
+.DS_Store
+public/

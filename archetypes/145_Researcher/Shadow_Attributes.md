@@ -1,0 +1,1 @@
+Perfectionistic Paralysis, Critical Detachment, Withdrawn Isolation, Intellectual Elitism, Overwhelming Self-Criticism
