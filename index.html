@@ -498,8 +498,8 @@
 
       try {
         const [lightResp, shadowResp] = await Promise.all([
-          fetch(`archetypes/${entry.folder}/Light_Attributes.md`),
-          fetch(`archetypes/${entry.folder}/Shadow_Attributes.md`)
+          fetch(`archetypes/${entry.folder}/Light/Attributes.md`),
+          fetch(`archetypes/${entry.folder}/Shadow/Attributes.md`)
         ]);
         
         if (lightResp.ok) {
