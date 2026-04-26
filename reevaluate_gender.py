@@ -28,6 +28,11 @@ def reevaluate_gender_for_aspect(archetype_folder, aspect):
     if not os.path.isdir(folder_path):
         return
 
+    gender_path = os.path.join(folder_path, "Gender.md")
+    if os.path.exists(gender_path):
+        print(f"[{archetype_folder}/{aspect}] Gender.md already exists. Skipping.")
+        return
+
     # Extract tritype name from folder (e.g., "125_Mentor" -> "125 Mentor")
     match = re.match(r'(\d{3})_(.*)', archetype_folder)
     if not match:
@@ -51,8 +56,6 @@ def reevaluate_gender_for_aspect(archetype_folder, aspect):
         with open(attr_path, 'r', encoding='utf-8') as f:
             attributes = f.read().strip()
             
-    gender_path = os.path.join(folder_path, "Gender.md")
-    
     prompt = PROMPT_TEMPLATE.format(
         aspect=aspect,
         tritype_name=tritype_name,
