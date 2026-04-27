@@ -1,1 +1,1 @@
-Perfectionist
+Rigid Critic

@@ -1,1 +1,1 @@
-The Inspiring Mentor
+Joyful Inspirer
