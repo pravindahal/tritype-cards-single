@@ -1,7 +1,7 @@
 import os
 import shutil
 
-ARCHETYPES_DIR = "/Users/pravindahal/tritype-cards/archetypes"
+ARCHETYPES_DIR = "archetypes"
 
 def restructure():
     for archetype in os.listdir(ARCHETYPES_DIR):

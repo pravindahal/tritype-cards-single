@@ -6,7 +6,7 @@ import json
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "gemma4:26b"
-ARCHETYPES_DIR = "/Users/pravindahal/tritype-cards/archetypes"
+ARCHETYPES_DIR = "archetypes"
 
 PROMPT_TEMPLATE = """You are an expert on the Enneagram personality typing system, specifically the Tritype theory.
 

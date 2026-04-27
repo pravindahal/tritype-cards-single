@@ -1,7 +1,7 @@
 import os
 import sys
 
-ARCHETYPES_DIR = "/Users/pravindahal/tritype-cards/archetypes"
+ARCHETYPES_DIR = "archetypes"
 
 def delete_root_genders():
     if not os.path.exists(ARCHETYPES_DIR):

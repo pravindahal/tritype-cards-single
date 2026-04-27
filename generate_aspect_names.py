@@ -8,29 +8,32 @@ MODEL = "gemma4:26b"
 ARCHETYPES_DIR = "archetypes"
 RAW_DIR = "archetypes_raw"
 
-PROMPT_TEMPLATE = """You are an expert character designer and psychologist working with the Enneagram Tritype system.
-We are assigning an archetypal gender representation (Male or Female) for the {aspect} aspect of the "{tritype_name}" Tritype.
+PROMPT_TEMPLATE = """You are an expert on the Enneagram Tritype system.
+We are splitting the overarching archetype "{tritype_name}" into two distinct sub-archetypes: a Light (positive/healthy) aspect and a Shadow (negative/unhealthy) aspect.
 
-Here is the raw text describing this Tritype:
+We need a short, evocative name for the {aspect} aspect of this archetype.
+For example, if the overarching archetype is "The Mentor", the Light aspect might be named "The Guide" and the Shadow aspect might be named "The Perfectionist". If the archetype is "The Supporter", the Light aspect might be "The Caretaker" and the Shadow aspect "The Martyr".
+
+Here is the raw text describing the overarching "{tritype_name}" Tritype:
 <raw_text_start>
 {raw_text}
 <raw_text_end>
 
-Here are the specific {aspect} Attributes for this aspect:
+Here are the specific traits of the {aspect} aspect:
 {attributes}
 
-Based on these traits and the overall archetype description, which gender representation (Male or Female) would visually and thematically best personify the {aspect} aspect of this archetype? 
-Please respond with ONLY ONE WORD: Male or Female. No other text.
+Based on this, what is the best 1-3 word name for the {aspect} aspect of this archetype? 
+Do not include any explanation, quotes, or extra text. Only output the name itself.
 """
 
-def reevaluate_gender_for_aspect(archetype_folder, aspect):
+def generate_name_for_aspect(archetype_folder, aspect):
     folder_path = os.path.join(ARCHETYPES_DIR, archetype_folder, aspect)
     if not os.path.isdir(folder_path):
         return
 
-    gender_path = os.path.join(folder_path, "Gender.md")
-    if os.path.exists(gender_path):
-        print(f"[{archetype_folder}/{aspect}] Gender.md already exists. Skipping.")
+    name_path = os.path.join(folder_path, "Name.md")
+    if os.path.exists(name_path):
+        print(f"[{archetype_folder}/{aspect}] Name.md already exists. Skipping.")
         return
 
     # Extract tritype name from folder (e.g., "125_Mentor" -> "125 Mentor")
@@ -69,29 +72,24 @@ def reevaluate_gender_for_aspect(archetype_folder, aspect):
         "stream": False
     }
     
-    print(f"[{archetype_folder}/{aspect}] Re-evaluating gender...")
+    print(f"[{archetype_folder}/{aspect}] Generating new name...")
     try:
         response = requests.post(OLLAMA_URL, json=payload)
         response.raise_for_status()
         output = response.json().get('response', '').strip()
         
-        # Clean up output
-        cleaned_output = re.sub(r'[^A-Za-z]', '', output)
-        if cleaned_output.lower() in ['male', 'female']:
-            final_gender = cleaned_output.capitalize()
-        else:
-            if 'female' in output.lower():
-                final_gender = 'Female'
-            elif 'male' in output.lower():
-                final_gender = 'Male'
-            else:
-                print(f"[{archetype_folder}/{aspect}] Unexpected output: {output}. Defaulting to Female.")
-                final_gender = "Female"
+        # Clean up output (remove quotes, newlines, etc.)
+        output = output.replace('"', '').replace("'", '').split('\n')[0].strip()
+        
+        # Fallback if something went terribly wrong and we got a huge paragraph
+        if len(output) > 50:
+            print(f"[{archetype_folder}/{aspect}] Output too long, defaulting to standard name.")
+            output = f"The {aspect} {match.group(2).replace('_', ' ')}"
             
-        with open(gender_path, 'w', encoding='utf-8') as f:
-            f.write(final_gender)
+        with open(name_path, 'w', encoding='utf-8') as f:
+            f.write(output)
             
-        print(f"[{archetype_folder}/{aspect}] Gender updated to: {final_gender}")
+        print(f"[{archetype_folder}/{aspect}] Name generated: {output}")
         
     except Exception as e:
         print(f"[{archetype_folder}/{aspect}] Failed to call Ollama: {e}")
@@ -103,5 +101,5 @@ if __name__ == "__main__":
         
     folders = sorted([f for f in os.listdir(ARCHETYPES_DIR) if os.path.isdir(os.path.join(ARCHETYPES_DIR, f))])
     for archetype in folders:
-        reevaluate_gender_for_aspect(archetype, "Light")
-        reevaluate_gender_for_aspect(archetype, "Shadow")
+        generate_name_for_aspect(archetype, "Light")
+        generate_name_for_aspect(archetype, "Shadow")
